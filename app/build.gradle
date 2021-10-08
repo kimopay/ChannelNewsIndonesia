@@ -35,4 +35,36 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-beta02'
+
+    //cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //dexter permissions
+    implementation "com.karumi:dexter:5.0.0"
+
+    //uCrpt Photo
+    implementation 'com.github.yalantis:ucrop:2.2.2'
+
+    //glide
+    implementation 'com.dyhdyh.support:glide:1.0.0'
+
+    // ZoominImageView
+    implementation 'com.github.chrisbanes:PhotoView:2.2.0'
+
+    // ZoominImageView ANIMATION
+    implementation 'com.vatsal.imagezoomer:image-zoomer:1.0.2'
+
+    // Allert
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+
+    //library retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+
+    //Bubble Navigation
+    implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
 }

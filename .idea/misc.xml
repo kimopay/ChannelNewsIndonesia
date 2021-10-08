@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/cover_img_headline.xml" value="0.3074074074074074" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/transition_background_nav.xml" value="0.3880208333333333" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_all_home.xml" value="0.22" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_dinamic.xml" value="0.3109375" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_user.xml" value="0.3177083333333333" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_video.xml" value="0.3177083333333333" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/item_konten.xml" value="0.18" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/item_news.xml" value="0.3109375" />
       </map>
     </option>
   </component>
