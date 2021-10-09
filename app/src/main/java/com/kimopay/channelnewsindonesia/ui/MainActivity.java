@@ -13,6 +13,7 @@ import com.gauravk.bubblenavigation.listener.BubbleNavigationChangeListener;
 import com.kimopay.channelnewsindonesia.R;
 import com.kimopay.channelnewsindonesia.ui.fragment.HomeFragment;
 import com.kimopay.channelnewsindonesia.ui.fragment.UserFragment;
+import com.kimopay.channelnewsindonesia.ui.fragment.VideoFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             public void onNavigationChanged(View view, int position) {
                 if (position==0){
                     openFragment(new HomeFragment());
+                } else if (position==1){
+                    openFragment(new VideoFragment());
                 } else {
                     openFragment(new UserFragment());
                 }

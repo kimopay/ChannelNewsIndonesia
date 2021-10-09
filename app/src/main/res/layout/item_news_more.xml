@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_img"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_news"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_cnn_2"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_marginVertical="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginHorizontal="8dp"
+            android:layout_below="@id/cv_img"
+            android:text="Dialog Kebangsaan: Pemuda Papua Harus Menggali Potensi Diri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

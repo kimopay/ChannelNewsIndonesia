@@ -23,7 +23,6 @@ import java.util.ArrayList;
 
 public class AllHomeFragment extends Fragment {
 
-    //
 //    private TextView tv1;
     private RecyclerView rv_headline;
     private RecyclerView rv_konten;
@@ -55,7 +54,6 @@ public class AllHomeFragment extends Fragment {
         rv_konten.setLayoutManager(horizontalLayoutManagaer);
         kontenAdapter = new KontenAdapter(getActivity(), kontens);
         rv_konten.setAdapter(kontenAdapter);
-
 
         return view;
     }

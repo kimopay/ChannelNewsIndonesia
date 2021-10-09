@@ -15,27 +15,27 @@ import com.kimopay.channelnewsindonesia.ui.DetailNewsActivity;
 
 import java.util.ArrayList;
 
-public class BreakingNewsAdapter extends RecyclerView.Adapter<BreakingNewsAdapter.MyHolderView> {
+public class NewsDinamicAdapter extends RecyclerView.Adapter<NewsDinamicAdapter.MyHolderView> {
 
     private Context context;
     private ArrayList<News> newsArrayList;
 
-    public BreakingNewsAdapter(Context context, ArrayList<News> newsArrayList) {
+    public NewsDinamicAdapter(Context context, ArrayList<News> newsArrayList) {
         this.context = context;
         this.newsArrayList = newsArrayList;
     }
 
     @NonNull
     @Override
-    public BreakingNewsAdapter.MyHolderView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NewsDinamicAdapter.MyHolderView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
-        view = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
-        BreakingNewsAdapter.MyHolderView myHolderView = new BreakingNewsAdapter.MyHolderView(view);
+        view = LayoutInflater.from(context).inflate(R.layout.item_news_dinamic, parent, false);
+        NewsDinamicAdapter.MyHolderView myHolderView = new NewsDinamicAdapter.MyHolderView(view);
         return myHolderView;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BreakingNewsAdapter.MyHolderView holder, int position) {
+    public void onBindViewHolder(@NonNull NewsDinamicAdapter.MyHolderView holder, int position) {
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +43,6 @@ public class BreakingNewsAdapter extends RecyclerView.Adapter<BreakingNewsAdapte
                 context.startActivity(new Intent(context, DetailNewsActivity.class));
             }
         });
-
     }
 
     @Override
