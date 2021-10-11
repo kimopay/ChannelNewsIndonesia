@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kimopay.channelnewsindonesia.R;
-import com.kimopay.channelnewsindonesia.model.Video;
+import com.kimopay.channelnewsindonesia.data.model.Video;
 import com.kimopay.channelnewsindonesia.ui.DetailVideoActivity;
 
 import java.util.ArrayList;

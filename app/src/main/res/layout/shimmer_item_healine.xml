@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white3">
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/view2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/white4" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/white3" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="100dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/rl1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view3"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white3"
+            android:padding="10dp">
+
+            <View
+                android:id="@id/view1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view2"
+                android:layout_width="200dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view3"
+                android:layout_width="100dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/view2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white3"
+            android:padding="10dp">
+
+            <View
+                android:id="@id/view1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view2"
+                android:layout_width="200dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view3"
+                android:layout_width="100dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/view2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white3"
+            android:padding="10dp">
+
+            <View
+                android:id="@id/view1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view2"
+                android:layout_width="200dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view3"
+                android:layout_width="100dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/view2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white3"
+            android:padding="10dp">
+
+            <View
+                android:id="@id/view1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view2"
+                android:layout_width="200dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+            <View
+                android:id="@id/view3"
+                android:layout_width="100dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/view2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@color/white4" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

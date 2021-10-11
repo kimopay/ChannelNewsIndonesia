@@ -10,9 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.kimopay.channelnewsindonesia.R;
-import com.kimopay.channelnewsindonesia.adapter.NewsDinamicAdapter;
 import com.kimopay.channelnewsindonesia.adapter.VideoMoreAdapter;
-import com.kimopay.channelnewsindonesia.model.Video;
+import com.kimopay.channelnewsindonesia.data.model.Video;
 
 import java.util.ArrayList;
 

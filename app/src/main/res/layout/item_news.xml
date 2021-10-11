@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="6dp"
     android:layout_marginHorizontal="16dp"
     app:cardCornerRadius="8dp"
@@ -28,38 +29,40 @@
 
                 <ImageView
                     android:id="@+id/img_foto"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_cnn_2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/img_cnn_2" />
 
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:maxLines="2"
-            android:ellipsize="end"
             android:id="@+id/title_news"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_toRightOf="@id/cv_foto"
-            android:text="Gubernur Ali Mazi Lantik Bupati dan Wakil Bupati Muna"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="Gubernur Ali Mazi Lantik Bupati dan Wakil Bupati Muna"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_marginTop="8dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_toRightOf="@id/cv_foto"
-            android:layout_below="@id/title_news"
-            android:textSize="10sp"
-            android:text="Daerah | Jumat, 17 September 2021"
+            android:id="@+id/tv_sub_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_news"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/cv_foto"
+            tools:text="Daerah | Jumat, 17 September 2021"
+            android:textSize="10sp" />
 
         <ImageView
+            android:id="@+id/img_bookmark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

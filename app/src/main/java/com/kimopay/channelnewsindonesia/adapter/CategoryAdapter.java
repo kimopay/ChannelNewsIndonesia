@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kimopay.channelnewsindonesia.R;
-import com.kimopay.channelnewsindonesia.model.Category;
+import com.kimopay.channelnewsindonesia.data.model.Category;
 
 import java.util.ArrayList;
 

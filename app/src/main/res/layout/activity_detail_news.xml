@@ -23,10 +23,10 @@
             <ImageView
                 android:id="@+id/img_news"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_cnn_1"
+                tools:src="@drawable/img_cnn_1"
                 app:layout_collapseMode="parallax" />
 
             <androidx.appcompat.widget.Toolbar
@@ -63,10 +63,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="35dp"
-                    android:text="Gubernur Ali Mazi Lantik Bupati dan Wakil Bupati Muna"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Gubernur Ali Mazi Lantik Bupati dan Wakil Bupati Muna" />
 
                 <TextView
                     android:id="@+id/tv_reporter"
@@ -75,7 +75,7 @@
                     android:layout_below="@id/title_news"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="3dp"
-                    android:text="Rporter : Muhammad Azwar Bahar"
+                    tools:text="Rporter : Muhammad Azwar Bahar"
                     android:textColor="@color/grey"
                     android:textSize="10sp" />
 
@@ -99,10 +99,10 @@
                     android:layout_toRightOf="@+id/img_date"
                     android:drawableTint="@color/black"
                     android:gravity="center_vertical"
-                    android:text="Senin 1 September 2021"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Senin 1 September 2021" />
 
                 <ImageView
                     android:id="@+id/img_eye"
@@ -124,8 +124,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/img_eye"
                     android:gravity="center_vertical"
-                    android:text="26"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="26" />
 
                 <TextView
                     android:id="@+id/tv_description"
@@ -135,7 +135,7 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="20dp"
                     android:lineSpacingExtra="7dp"
-                    android:text="@string/content_news"
+                    tools:text="@string/content_news"
                     android:textColor="@color/black" />
 
                 <RelativeLayout

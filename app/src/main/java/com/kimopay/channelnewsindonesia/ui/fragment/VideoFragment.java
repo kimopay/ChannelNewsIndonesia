@@ -13,9 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.kimopay.channelnewsindonesia.R;
-import com.kimopay.channelnewsindonesia.adapter.NewsDinamicAdapter;
 import com.kimopay.channelnewsindonesia.adapter.VideoAdapter;
-import com.kimopay.channelnewsindonesia.model.Video;
+import com.kimopay.channelnewsindonesia.data.model.Video;
 
 import java.util.ArrayList;
 

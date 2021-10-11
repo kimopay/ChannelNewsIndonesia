@@ -6,17 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kimopay.channelnewsindonesia.R;
-import com.kimopay.channelnewsindonesia.adapter.BreakingNewsAdapter;
 import com.kimopay.channelnewsindonesia.adapter.NewsDinamicAdapter;
-import com.kimopay.channelnewsindonesia.model.News;
+import com.kimopay.channelnewsindonesia.data.model.News;
 
 import java.util.ArrayList;
 
@@ -47,13 +46,16 @@ public class DinamicHomeFragment extends Fragment {
         newsDinamicAdapter = new NewsDinamicAdapter(getActivity(), newsArrayList);
         rv_news_dinamic.setAdapter(newsDinamicAdapter);
 
+//        Toast.makeText(getActivity(), String.valueOf(getArguments().getInt("position")), Toast.LENGTH_SHORT).show();
+
         return view;
     }
 
     private void initViews(View view) {
 
+        tv1=view.findViewById(R.id.tv1);
         rv_news_dinamic=view.findViewById(R.id.rv_news_dinamic);
-//        tv1.setText(String.valueOf("Category :  "+getArguments().getInt("position")));
+        tv1.setText(String.valueOf("Category :  "+getArguments().getInt("position")));
     }
 
     @Override
