@@ -2,6 +2,7 @@ package com.kimopay.channelnewsindonesia.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -9,10 +10,14 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.kimopay.channelnewsindonesia.R;
@@ -21,6 +26,7 @@ import com.kimopay.channelnewsindonesia.adapter.NewsMoreAdapter;
 import com.kimopay.channelnewsindonesia.data.model.Category;
 import com.kimopay.channelnewsindonesia.data.model.News;
 import com.kimopay.channelnewsindonesia.data.model.Reporter;
+import com.kimopay.channelnewsindonesia.data.response.ResponseCategory;
 import com.kimopay.channelnewsindonesia.data.response.ResponseNews;
 import com.kimopay.channelnewsindonesia.data.response.ResponseReporter;
 import com.kimopay.channelnewsindonesia.network.ApiClient;
@@ -59,6 +65,9 @@ public class DetailNewsActivity extends AppCompatActivity implements SwipeRefres
     private CollapsingToolbarLayout collaps_toolbar;
     private AppBarLayout appbar;
 
+    private CoordinatorLayout continer_news_detail;
+    private ShimmerFrameLayout shimmer_view_container;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +87,10 @@ public class DetailNewsActivity extends AppCompatActivity implements SwipeRefres
         tv_reporter = findViewById(R.id.tv_reporter);
         tv_date_news = findViewById(R.id.tv_date_news);
         tv_view_news = findViewById(R.id.tv_view_news);
+
+        shimmer_view_container = findViewById(R.id.shimmer_view_container);
+        continer_news_detail = findViewById(R.id.continer_news_detail);
+        startShimmer();
 
         tv_description = findViewById(R.id.tv_description);
         rv_kategori = findViewById(R.id.rv_kategori);
@@ -116,8 +129,63 @@ public class DetailNewsActivity extends AppCompatActivity implements SwipeRefres
             @Override
             public void run() {
                 loadData(news_id);
+                loadDataCategory();
             }
         });
+
+    }
+
+    private void startShimmer() {
+        continer_news_detail.setVisibility(View.GONE);
+        shimmer_view_container.startShimmerAnimation();
+        shimmer_view_container.setVisibility(View.VISIBLE);
+    }
+
+    private void stopShimmer() {
+        continer_news_detail.setVisibility(View.VISIBLE);
+        shimmer_view_container.stopShimmerAnimation();
+        shimmer_view_container.setVisibility(View.GONE);
+    }
+
+    private void loadDataCategory() {
+
+
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<ResponseCategory> responseCategoryCall = apiInterface.getCategoryAll();
+        responseCategoryCall.enqueue(new Callback<ResponseCategory>() {
+            @Override
+            public void onResponse(Call<ResponseCategory> call, Response<ResponseCategory> response) {
+                if (response.isSuccessful()) {
+                    String kode = response.body().getKode();
+                    if (kode.equals("1")) {
+                        categories = (ArrayList<Category>) response.body().getCategory_result();
+                        initCategory(categories);
+                    } else {
+                        Log.e("Category", "Response : " + response.message());
+                    }
+
+                } else {
+                    Log.e("Category", "Response : " + response.message());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseCategory> call, Throwable t) {
+                Log.e("Category", "Response : " + t.getMessage());
+            }
+        });
+
+    }
+
+    private void initCategory(ArrayList<Category> categories) {
+
+        // category
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        rv_kategori.setLayoutManager(horizontalLayoutManagaer);
+        categoryAdapter = new CategoryAdapter(this, categories);
+        rv_kategori.setAdapter(categoryAdapter);
+
 
     }
 
@@ -128,6 +196,8 @@ public class DetailNewsActivity extends AppCompatActivity implements SwipeRefres
         responseNewsCall.enqueue(new Callback<ResponseNews>() {
             @Override
             public void onResponse(Call<ResponseNews> call, Response<ResponseNews> response) {
+                stopShimmer();
+                swipe_continer.setRefreshing(false);
                 if (response.isSuccessful()) {
                     String kode = response.body().getKode();
                     if (kode.equals("1")) {
@@ -139,24 +209,17 @@ public class DetailNewsActivity extends AppCompatActivity implements SwipeRefres
 
             @Override
             public void onFailure(Call<ResponseNews> call, Throwable t) {
+                stopShimmer();
+                swipe_continer.setRefreshing(false);
 
             }
         });
-
-
-        // category
-        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        rv_kategori.setLayoutManager(horizontalLayoutManagaer);
-        categoryAdapter = new CategoryAdapter(this, categories);
-        rv_kategori.setAdapter(categoryAdapter);
 
         // news more
         LinearLayoutManager horizontalLayoutManagaer2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rv_news_more.setLayoutManager(horizontalLayoutManagaer2);
         newsMoreAdapter = new NewsMoreAdapter(this, newsArrayList);
         rv_news_more.setAdapter(newsMoreAdapter);
-
-        swipe_continer.setRefreshing(false);
 
     }
 
@@ -229,6 +292,7 @@ public class DetailNewsActivity extends AppCompatActivity implements SwipeRefres
     @Override
     public void onRefresh() {
         loadData(news_id);
+        loadDataCategory();
     }
 
     @Override

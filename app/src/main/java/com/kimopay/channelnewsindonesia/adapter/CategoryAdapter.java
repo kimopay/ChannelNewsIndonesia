@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,16 +36,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyHold
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.MyHolderView holder, int position) {
 
+        holder.tv_kategori.setText(categories.get(position).getCategory_name());
+
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return categories.size();
     }
 
     public class MyHolderView extends RecyclerView.ViewHolder {
+        TextView tv_kategori;
         public MyHolderView(@NonNull View itemView) {
             super(itemView);
+            tv_kategori = itemView.findViewById(R.id.tv_kategori);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.kimopay.channelnewsindonesia.network;
 
+import com.kimopay.channelnewsindonesia.data.response.ResponseAds;
 import com.kimopay.channelnewsindonesia.data.response.ResponseCategory;
 import com.kimopay.channelnewsindonesia.data.response.ResponseNews;
 import com.kimopay.channelnewsindonesia.data.response.ResponseReporter;
@@ -9,6 +10,16 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
+
+    //ads
+    @GET("ads/getAdsAll.php")
+    Call<ResponseAds> getAdsAll();
+
+    @GET("ads/getAdsCategory.php")
+    Call<ResponseAds> getAdsCategory(@Query("category") String category);
+
+    @GET("ads/getAdsId.php")
+    Call<ResponseAds> getAdsId(@Query("id") String id);
 
     //category
     @GET("category/getCategoryAll.php")
@@ -23,6 +34,9 @@ public interface ApiInterface {
 
     @GET("news/getNewsId.php")
     Call<ResponseNews> getNewsId(@Query("id") String id);
+
+    @GET("news/getNewsCategory.php")
+    Call<ResponseNews> getNewsCategory(@Query("category_id") String category_id);
 
     @GET("news/getNewsAll.php")
     Call<ResponseNews> getNewsAll(@Query("record_awal") String record_awal,

@@ -17,11 +17,18 @@ public class ResponseNews {
     @SerializedName("news_result")
     private ArrayList<News> news_result;
 
+    @SerializedName("news_result_category")
+    private ArrayList<News> news_result_category;
+
     @SerializedName("news_item")
     private News news_item;
 
     @SerializedName("news_item_random")
     private News news_item_random;
+
+    public ArrayList<News> getNews_result_category() {
+        return news_result_category;
+    }
 
     public ArrayList<News> getNews_result() {
         return news_result;

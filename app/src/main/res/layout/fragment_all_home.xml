@@ -4,6 +4,7 @@
     xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe_continer"
+    android:background="@color/white1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

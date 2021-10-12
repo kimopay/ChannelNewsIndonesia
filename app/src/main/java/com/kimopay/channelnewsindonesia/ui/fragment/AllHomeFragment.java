@@ -21,8 +21,10 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.kimopay.channelnewsindonesia.R;
 import com.kimopay.channelnewsindonesia.adapter.BreakingNewsAdapter;
 import com.kimopay.channelnewsindonesia.adapter.KontenAdapter;
+import com.kimopay.channelnewsindonesia.data.model.Ads;
 import com.kimopay.channelnewsindonesia.data.model.Konten;
 import com.kimopay.channelnewsindonesia.data.model.News;
+import com.kimopay.channelnewsindonesia.data.response.ResponseAds;
 import com.kimopay.channelnewsindonesia.data.response.ResponseCategory;
 import com.kimopay.channelnewsindonesia.data.response.ResponseNews;
 import com.kimopay.channelnewsindonesia.network.ApiClient;
@@ -46,6 +48,7 @@ public class AllHomeFragment extends Fragment implements SwipeRefreshLayout.OnRe
     private KontenAdapter kontenAdapter;
     private ArrayList<News> newsArrayList;
     private ArrayList<Konten> kontens;
+    private ArrayList<Ads> adsArrayList;
     private RecyclerView rv_headline;
     private RecyclerView rv_headline2;
 
@@ -100,16 +103,45 @@ public class AllHomeFragment extends Fragment implements SwipeRefreshLayout.OnRe
                 loadDataHeadline();
                 loadDataBreakingNews();
                 loadDataBreakingNews2();
-
-                LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-                rv_konten.setLayoutManager(horizontalLayoutManagaer);
-                kontenAdapter = new KontenAdapter(getActivity(), kontens);
-                rv_konten.setAdapter(kontenAdapter);
+                loadDataAds("konten");
 
             }
         });
 
         return view;
+    }
+
+    private void loadDataAds(String category_ads) {
+
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<ResponseAds> responseAdsCall = apiInterface.getAdsCategory(category_ads);
+        responseAdsCall.enqueue(new Callback<ResponseAds>() {
+            @Override
+            public void onResponse(Call<ResponseAds> call, Response<ResponseAds> response) {
+                if (response.isSuccessful()){
+                    String kode = response.body().getKode();
+                    if (kode.equals("1")){
+                        adsArrayList = (ArrayList<Ads>) response.body().getAds_category();
+                        initAds(adsArrayList);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseAds> call, Throwable t) {
+
+            }
+        });
+
+
+    }
+
+    private void initAds(ArrayList<Ads> adsArrayList) {
+
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        rv_konten.setLayoutManager(horizontalLayoutManagaer);
+        kontenAdapter = new KontenAdapter(getActivity(), adsArrayList);
+        rv_konten.setAdapter(kontenAdapter);
     }
 
     private void loadDataBreakingNews2() {
@@ -271,11 +303,8 @@ public class AllHomeFragment extends Fragment implements SwipeRefreshLayout.OnRe
     public void onRefresh() {
         loadDataHeadline();
         loadDataBreakingNews();
-
-        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        rv_konten.setLayoutManager(horizontalLayoutManagaer);
-        kontenAdapter = new KontenAdapter(getActivity(), kontens);
-        rv_konten.setAdapter(kontenAdapter);
+        loadDataBreakingNews2();
+        loadDataAds("konten");
 
 
     }

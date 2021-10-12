@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/bg_btn_refresh.xml" value="0.25" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/circle_primary.xml" value="0.382051282051282" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/continer_content_news_detail.xml" value="0.382051282051282" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/cover_img_headline.xml" value="0.3074074074074074" />
@@ -13,8 +14,9 @@
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/drawable/transition_background_nav.xml" value="0.3880208333333333" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/activity_detail_news.xml" value="0.25" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/activity_view_image.xml" value="0.22" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_all_home.xml" value="0.22" />
-        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_dinamic.xml" value="0.3109375" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_dinamic.xml" value="0.22" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_user.xml" value="0.3177083333333333" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/fragment_video.xml" value="0.3177083333333333" />
@@ -27,6 +29,8 @@
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/item_video.xml" value="0.25" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/item_video_more.xml" value="0.22" />
         <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/shimmer_item_healine.xml" value="0.28541666666666665" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/shimmer_item_news_dinamic.xml" value="0.25" />
+        <entry key="..\:/project/ChannelNewsIndonesia/app/src/main/res/layout/shinner_detail_news.xml" value="0.22" />
       </map>
     </option>
   </component>

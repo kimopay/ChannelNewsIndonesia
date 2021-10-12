@@ -1,253 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     tools:context=".ui.DetailNewsActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/continer_news_detail"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collaps_toolbar"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+            android:layout_height="280dp"
+            android:fitsSystemWindows="true">
 
-            <ImageView
-                android:id="@+id/img_news"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collaps_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/img_cnn_1"
-                app:layout_collapseMode="parallax" />
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
+                <ImageView
+                    android:id="@+id/img_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/img_cnn_1"
+                    app:layout_collapseMode="parallax" />
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_continer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="-26dp"
-        android:background="@drawable/continer_content_news_detail"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/continer_content_news_detile"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_continer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="-26dp"
+            android:background="@drawable/continer_content_news_detail"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-
-            <RelativeLayout
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/continer_content_news_detile"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/title_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="35dp"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    tools:text="Gubernur Ali Mazi Lantik Bupati dan Wakil Bupati Muna" />
-
-                <TextView
-                    android:id="@+id/tv_reporter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/title_news"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="3dp"
-                    tools:text="Rporter : Muhammad Azwar Bahar"
-                    android:textColor="@color/grey"
-                    android:textSize="10sp" />
-
-                <ImageView
-                    android:id="@+id/img_date"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_below="@id/tv_reporter"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_baseline_date_range_24"
-                    app:tint="@color/black" />
-
-                <TextView
-                    android:id="@+id/tv_date_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_reporter"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@+id/img_date"
-                    android:drawableTint="@color/black"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    tools:text="Senin 1 September 2021" />
-
-                <ImageView
-                    android:id="@+id/img_eye"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_below="@id/tv_reporter"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@id/tv_date_news"
-                    android:src="@drawable/ic_baseline_remove_red_eye_24"
-                    app:tint="@color/grey" />
-
-                <TextView
-                    android:id="@+id/tv_view_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_reporter"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@+id/img_eye"
-                    android:gravity="center_vertical"
-                    android:textSize="12sp"
-                    tools:text="26" />
-
-                <TextView
-                    android:id="@+id/tv_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_date_news"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="20dp"
-                    android:lineSpacingExtra="7dp"
-                    tools:text="@string/content_news"
-                    android:textColor="@color/black" />
 
                 <RelativeLayout
-                    android:id="@+id/rl_kategori"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_description"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/white2"
-                    android:paddingVertical="10dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/tv1"
+                        android:id="@+id/title_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="35dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="Gubernur Ali Mazi Lantik Bupati dan Wakil Bupati Muna" />
+
+                    <TextView
+                        android:id="@+id/tv_reporter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title_news"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="3dp"
+                        tools:text="Rporter : Muhammad Azwar Bahar"
+                        android:textColor="@color/grey"
+                        android:textSize="10sp" />
+
+                    <ImageView
+                        android:id="@+id/img_date"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_below="@id/tv_reporter"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_baseline_date_range_24"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_date_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_reporter"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/img_date"
+                        android:drawableTint="@color/black"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="Senin 1 September 2021" />
+
+                    <ImageView
+                        android:id="@+id/img_eye"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_below="@id/tv_reporter"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@id/tv_date_news"
+                        android:src="@drawable/ic_baseline_remove_red_eye_24"
+                        app:tint="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/tv_view_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_reporter"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/img_eye"
+                        android:gravity="center_vertical"
+                        android:textSize="12sp"
+                        tools:text="26" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_date_news"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="20dp"
+                        android:lineSpacingExtra="7dp"
+                        tools:text="@string/content_news"
+                        android:textColor="@color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_kategori"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_description"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/white2"
+                        android:paddingVertical="10dp">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="12dp"
+                            android:text="Kategori Berita"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="70dp"
+                            android:layout_height="1dp"
+                            android:layout_below="@id/tv1"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/color_primary_cnn" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_kategori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/view1"
+                            android:layout_marginTop="10dp"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/item_kategori_detail" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_kategori"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
                         android:text="Kategori Berita"
                         android:textColor="@color/grey"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <View
-                        android:id="@+id/view1"
+                        android:id="@+id/view2"
                         android:layout_width="70dp"
                         android:layout_height="1dp"
-                        android:layout_below="@id/tv1"
+                        android:layout_below="@id/tv2"
                         android:layout_marginHorizontal="16dp"
                         android:layout_marginTop="5dp"
                         android:background="@color/color_primary_cnn" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_kategori"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/rv_news_more"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/view1"
-                        android:layout_marginTop="10dp"
+                        android:layout_below="@id/view2"
+                        android:layout_marginBottom="10dp"
                         tools:itemCount="1"
-                        tools:listitem="@layout/item_kategori_detail" />
-
+                        tools:listitem="@layout/item_news_more" />
 
                 </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tv2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/rl_kategori"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Kategori Berita"
-                    android:textColor="@color/grey"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+            </androidx.core.widget.NestedScrollView>
 
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="70dp"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/tv2"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/color_primary_cnn" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_news_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/view2"
-                    android:layout_marginBottom="10dp"
-                    tools:itemCount="1"
-                    tools:listitem="@layout/item_news_more" />
-
-            </RelativeLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="4dp"
-        app:layout_anchor="@id/continer_content_news_detile"
-        app:layout_anchorGravity="end|top">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_share"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="@color/color_primary_cnn"
-            android:baselineAlignBottom="false"
-            android:clickable="true"
-            android:src="@drawable/ic_baseline_share_24"
-            app:fabSize="mini"
-            app:tint="@color/white" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_anchor="@id/continer_content_news_detile"
+            app:layout_anchorGravity="end|top">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:backgroundTint="@color/color_primary_cnn"
-            android:baselineAlignBottom="false"
-            android:clickable="true"
-            android:src="@drawable/ic_baseline_bookmark_border_24"
-            app:fabSize="mini"
-            app:tint="@color/white" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/color_primary_cnn"
+                android:baselineAlignBottom="false"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_share_24"
+                app:fabSize="mini"
+                app:tint="@color/white" />
 
-    </LinearLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/color_primary_cnn"
+                android:baselineAlignBottom="false"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_bookmark_border_24"
+                app:fabSize="mini"
+                app:tint="@color/white" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        shimmer:duration="800">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/shimmer_detail_news"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</RelativeLayout>
